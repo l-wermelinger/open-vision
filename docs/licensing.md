@@ -12,7 +12,11 @@ No third-party application implementation is currently vendored. Links, independ
 
 Users must obtain Xcode and any visionOS Simulator runtime through Apple under the applicable terms. Do not upload runtime images, firmware, extracted frameworks, private SDK binaries, restricted fonts, icons or wallpapers to this repository or its releases.
 
-Apple's published device-OS and developer agreements contain restrictions and exceptions. Simulator use must be assessed under the relevant SDK/tool agreement; an experiment working technically does not settle its licence status or authorize a general-purpose distributed product. The [research ledger](research/sources.json) records the agreements examined and their limitations.
+Apple's published device-OS and developer agreements contain restrictions and exceptions. The actual **Xcode and Apple SDKs Agreement** explicitly includes simulators in its SDK definitions. The retrieved section 2.2.A(iii)-(iv) limits relevant SDK/service use to testing/development for applicable Apple-branded products; section 2.7 contains non-Apple, network/server, copying and modification restrictions with stated legal/open-source qualifications. Source S48 in the [research ledger](research/sources.json).
+
+Those terms create a **material intended-use/SDK review gate** for a general-purpose simulator-to-headset workspace, not merely a rule about bundling downloads. Do not assume that rendering on an Apple Mac automatically authorizes every end-user remote-use scenario or private hook. Obtain a suitable permission/legal position before adopting that product path. This policy does not give a jurisdiction-specific legal verdict or override any statutory exception.
+
+The real Apple Account requirement does not authorize bypassing Apple identity checks, weakening two-factor/security settings, or exporting authenticated runtime state. Users enter credentials themselves and Apple software remains separately obtained under the applicable terms.
 
 Do not copy leaked/decompiled proprietary source or submit an AI-rewritten derivative as independently licensed code. Limited interoperability exceptions, where applicable, are not blanket redistribution permission.
 

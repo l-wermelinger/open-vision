@@ -5,7 +5,7 @@
 - Status: **Documentary findings only. No hardware validation or application implementation yet.**
 - Initial headset assumption: **the original consumer PICO 4**, not Ultra, Pro or Enterprise.
 
-**Current project direction:** host Apple's visionOS Simulator on an Apple-silicon Mac, such as a Mac mini or Mac Studio, and stream its spatial view stereoscopically to an existing VR headset with pose/input return. Section 5.6 contains the key historical evidence. The [architecture](../architecture.md) and [workstream](../workstream.md) describe the selected scope and next validation tasks. Full retail visionOS functionality is not established by Simulator support. The Open Vision name has not undergone trademark clearance.
+**Current project direction:** host Apple's visionOS Simulator on an Apple-silicon Mac, such as a Mac mini or Mac Studio, and stream its spatial view stereoscopically to an existing VR headset with pose/input return. Section 5.6 contains the key historical evidence. The [requirements contract](../product-requirements.md), [architecture](../architecture.md) and [phased workstream/handoff](../workstream.md) describe the selected scope, delegated decisions and validation gates. Full retail visionOS functionality is not established by Simulator support. The Open Vision name has not undergone trademark clearance.
 
 This report preserves the research progression. Sections 1 and 6-9 also examine an independently rendered Mac-workspace alternative; those recommendations must not override the subsequently selected authentic-Simulator goal.
 
@@ -245,6 +245,20 @@ Pico 4: decode/present stereo views <-> return headset pose and mapped input
 **Next evidence gate, if this route is chosen:** inspect the Mac Studio's installed macOS/Xcode/runtime versions without changing them; identify a version-compatible bridge; then demonstrate a stereo scene that follows head movement before adding MacBook streaming or custom eye tracking. Investigate modern supported hooks and isolation before accepting any security downgrade. Do not download old packages, inject code, alter the server or start an implementation without approval.
 
 This finding changes the simulator route from a generic possibility into an architecture with a historical working example. It does **not** establish a production Vision Pro replacement, a modern Pico build, or a delivery schedule.
+
+### 5.7 Follow-up: container placement, real accounts and the actual SDK terms
+
+The owner subsequently required lightweight Mac Studio hosting, asked for container isolation and made real Apple Account compatibility mandatory rather than a demo-only feature. These are now explicit requirements, not established runtime results.
+
+**Container boundary:** Docker Desktop on Mac runs Linux workloads, and Apple's own `container` project explicitly runs Linux containers in lightweight VMs. Apple's Xcode matrix requires macOS and Apple silicon for visionOS development. A normal Linux/OCI image therefore cannot directly supply the native Simulator stack. The selected engineering default is a native per-user Mac worker with separate device data and scoped lifecycle, plus an auxiliary container only if it earns its overhead. That is not literal full-runtime containerization or equivalent security confinement. Sources S43-S45.
+
+A real macOS VM is a different possible isolation boundary. Apple documents iCloud access for properly created macOS 15+ VMs on compatible Apple-silicon hosts, including identity and reauthentication constraints. This prevents a blanket claim that virtualized Apple accounts are impossible. It does **not** prove visionOS Simulator account compatibility inside a guest, nested graphics support or acceptable overhead. Those remain separate tests. Sources S46-S47.
+
+**Account boundary:** the selected runtime must be tested with the owner's real account through its actual simulated account UI, ordinary two-factor authentication, an approved non-sensitive real iCloud operation and persistence. Xcode developer signing, a StoreKit sandbox account or website login alone is not equivalent. Recheck after adding the bridge and in the final deployment. No such owner-account test was performed during research; historical S42 is not a current guarantee.
+
+**Material SDK permission finding:** the retrieved Xcode and Apple SDKs Agreement defines simulators within Apple SDKs. Section 2.2.A(iii)-(iv) restricts relevant SDK/services use to testing/development for applicable Apple-branded products; section 2.7 includes network/server, non-Apple, modification and redistribution restrictions, with its stated legal/open-source qualifications. A general-purpose end-user workspace and its hooks therefore need specific SDK/intended-use review. Using an Apple host is not itself a legal determination. Source S48. This is not jurisdiction-specific legal advice or a conclusion about every statutory interoperability exception.
+
+The implementation plan puts version/reuse/SDK review, authorized device inventory, real-account feasibility and the deployment/resource baseline in Phase 0. Standard system-wide controller-to-native-gesture behaviour precedes full articulated-hand compatibility; low-cost native media paths are preferred to an engine or VM. None of these decisions makes a presently unverified feature work.
 
 ## 6. Alternative architecture: a locally rendered Mac workspace
 
@@ -532,7 +546,7 @@ Research used direct public-page/repository access and search-engine discovery. 
 
 Official specifications strongly support hardware boundaries. Official compatibility pages support advertised product capabilities, not measured performance. Repository source supports architectural plausibility, not product readiness. Older hands-on reviews illuminate hardware and user-experience constraints but are explicitly not treated as current firmware benchmarks. Sources sharing a vendor/repository are one evidence family, not independent corroborating votes.
 
-The source-to-claim mapping, limitations, retrieval date and relevant local snapshots are recorded in `sources.json`. Downloaded pages/code excerpts are retained under `tmp/` for local verification only and are excluded from Git. They are not a licence to republish third-party material.
+The source-to-claim mapping, limitations, retrieval dates and relevant local snapshots are recorded in `sources.json`. The 2026-11-02 planning follow-up added original Docker/Apple container, Xcode, macOS-VM/iCloud and SDK-agreement references S43-S48. Downloaded pages/code excerpts are retained under `tmp/` for local verification only and are excluded from Git. They are not a licence to republish third-party material.
 
 ## 13. Final opinion
 

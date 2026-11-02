@@ -4,7 +4,7 @@
 
 Open Vision is a research-stage project investigating a bridge from the **visionOS Simulator on an Apple-silicon Mac** to an existing VR headset. A Mac mini or Mac Studio would run the simulated spatial environment; the headset would display stereoscopic views and return head tracking and input.
 
-**Status, 2026-11-02: research and repository setup only. There is no working Open Vision host, headset client or downloadable release yet.**
+**Status, 2026-11-02: researched requirements, architecture, implementation phases and agent handoff are documented. There is no working Open Vision host, headset client or downloadable release yet.**
 
 This is not a visionOS firmware port, an Apple-device identity emulator, or a claim that the Simulator provides every retail Vision Pro app and service. Apple software is not included. Open Vision is independent and is not affiliated with Apple, PICO or Meta.
 
@@ -25,7 +25,9 @@ The goal is the **whole simulated spatial view**, not merely a flat simulator wi
 
 The first target is the **original consumer PICO 4**. Other headsets are a longer-term goal, not an existing compatibility claim. The minimum Mac chip, macOS, Xcode and runtime versions are not established yet.
 
-A later goal is working with real MacBook desktops inside the simulated environment. **Apple's native Mac Virtual Display has not been verified in Simulator**; a separate companion and simulator-compatible receiver may be necessary.
+The complete product goal includes real MacBook extended desktops and **the owner's real Apple Account**, not a demo-account-only experience. Neither account/service compatibility nor **Apple's native Mac Virtual Display in Simulator** has been verified. These are explicit acceptance gates; a separate desktop companion/receiver may be necessary.
+
+The requested lightweight deployment has an important boundary: normal Docker/Apple Linux containers cannot host the actual macOS/Xcode Simulator. The selected default is a small native Mac Studio worker with separate data/lifecycle, not a pretend full-runtime container. Optional containerized auxiliaries or a real macOS VM require their own justification and tests. See the [requirements contract](docs/product-requirements.md).
 
 ## Why this is worth investigating
 
@@ -35,10 +37,11 @@ However, its documented configuration is old, later issues report compatibility 
 
 ## Start here
 
-- [Architecture](docs/architecture.md): the selected direction, component boundaries and unresolved assumptions.
-- [Workstream](docs/workstream.md): current state, stable-ID tasks and a paste-ready cloud-agent bootstrap.
+- [Product requirements](docs/product-requirements.md): delegated decisions, controller/hand semantics, mandatory real-account tests and lightweight deployment policy.
+- [Architecture](docs/architecture.md): selected runtime boundaries and proposed media/pose path.
+- [Phases and agent handoff](docs/workstream.md): seven implementation phases, stable-ID acceptance gates, and the standalone **START HERE** prompt for the next agent. Use one coordinator with up to three focused workers, not an unbounded swarm.
 - [Research report](docs/research/report.md): full findings, including the earlier independent-workspace alternative.
-- [Source ledger](docs/research/sources.json): 42 curated sources with retrieval dates, uses and limitations.
+- [Source ledger](docs/research/sources.json): 48 curated sources with retrieval dates, uses and limitations.
 - [Licensing and third-party boundaries](docs/licensing.md): what may and may not be reused.
 - [Contributing](CONTRIBUTING.md) and [agent instructions](AGENTS.md): how to work safely and leave reproducible evidence.
 
@@ -63,8 +66,9 @@ AGENTS.md                 Portable instructions for coding/cloud agents
 CONTRIBUTING.md            Contribution, evidence and review rules
 LICENSE                    MIT licence for original Open Vision contributions
 docs/
+  product-requirements.md Delegated product and acceptance contract
   architecture.md         Proposed simulator-bridge architecture
-  workstream.md           Single task/status ledger and session handoff
+  workstream.md           Single phased task/status ledger and full handoff
   licensing.md            Apple and upstream licence boundaries
   research/
     report.md             Complete feasibility research

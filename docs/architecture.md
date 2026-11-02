@@ -4,7 +4,9 @@ Updated: 2026-11-02. **Proposed architecture, not an implemented system.**
 
 ## Selected direction
 
-Open Vision aims to present the **spatial environment supplied by Apple's visionOS Simulator** on an existing VR headset. An Apple-silicon Mac hosts the simulator; a bridge transports stereo views and returns tracking/input. A Mac mini or Mac Studio is a candidate host, subject to version, performance and GUI/session validation.
+The [product requirements](product-requirements.md) define the delegated decisions and acceptance contract. They are requirements, not measured capabilities. The [workstream](workstream.md) is the single phase/status ledger and contains the standalone agent handoff.
+
+Open Vision aims to present the **spatial environment supplied by Apple's visionOS Simulator** on an existing VR headset. An Apple-silicon Mac hosts the simulator; a bridge transports stereo views and returns tracking/input. The owner's Mac Studio is the target host; a Mac mini or the development MacBook may be separate tested profiles, subject to version, performance and GUI/session validation.
 
 The original consumer PICO 4 is the initial target. OpenXR support alone does not establish compatibility with its loader, interaction profiles, decoder, firmware or optional extensions.
 
@@ -19,6 +21,24 @@ This is not native visionOS on a PICO CPU. It is also not a replacement shell im
 **Unverified:** current macOS/Xcode/runtime compatibility, a modern PICO client combination, acceptable latency, controller/hand input, and native Mac Virtual Display in Simulator.
 
 **Verified in this repository:** research and documentation exist. No application implementation or hardware test has been performed. Use the [workstream](workstream.md) for current task evidence and the [source ledger](research/sources.json) for source dates and limits.
+
+## Runtime placement and the container request
+
+**Researched:** Docker Desktop on macOS runs Linux workloads; Apple's `container` also runs Linux containers in lightweight VMs. Xcode and visionOS development have native macOS/Apple-silicon requirements. Ordinary Linux/OCI containers are therefore not a supported location for the actual visionOS Simulator. Sources S43-S45.
+
+**Selected default:** a small native per-user macOS host worker controls one dedicated Simulator device in an authorized GUI session. Keep its configuration, data and lifecycle separate from unrelated workloads; stop only owned resources. This is process/data isolation, not security-equivalent container confinement. It avoids adding a Linux VM merely to supervise native GUI software.
+
+Containerize an auxiliary relay/control component only if a measured need appears; do not move Apple account state or grant broad host privileges to that container. The first release should not require an ancillary container or cloud backend.
+
+A real macOS VM is a distinct, conditional alternative. Prove graphics/Metal, nested Simulator behaviour, account access and total overhead before choosing it. Apple's documented iCloud support in suitably created macOS VMs does not prove that visionOS Simulator inside them supports the same account/services. Sources S46-S47.
+
+**Explicit gap:** literal full-runtime Linux-container deployment is not fulfilled by the native default. If that packaging boundary is mandatory, mark it blocked rather than presenting an imitation Docker setup as success.
+
+## Real account and SDK gates
+
+Real owner Apple Account login is a release requirement, not an optional demo. Test the stock runtime/account/service combination early, then revalidate the integrated and packaged versions. Only the owner enters credentials and two-factor codes. Xcode signing, sandbox accounts and website login are not system-account evidence. Use private persistent account state, no exported credentials, no recorded sign-in screens and no unauthenticated personal-content stream. See the exact procedure in [product requirements](product-requirements.md).
+
+The actual Xcode/SDK licence, not merely the device-OS licence, is relevant. Its simulator definitions and development-use/network/modification restrictions create a material review gate for this intended end-user workspace. No assertion of general authorization follows from running on an Apple Mac. Source S48. A positive technical experiment is not a legal determination.
 
 ## Proposed data flow
 
@@ -37,7 +57,7 @@ Apple-silicon Mac
   existing VR headset and its native runtime
 ```
 
-Headset tracking is measured by the headset. Camera/view transforms must reach the host rendering path, and pose timestamps must remain meaningful through encoding and presentation. The diagram does not prescribe a wire protocol or guarantee a usable latency budget.
+Headset tracking is measured by the headset. Camera/view transforms must reach the host rendering path, and pose timestamps must remain meaningful through encoding and presentation. The diagram does not prescribe a wire protocol or guarantee a usable latency budget. Prefer a Swift/macOS supervisor, a narrowly versioned native adapter and a lean Android/OpenXR endpoint, subject to licence/compatibility findings. Investigate reusable hardware encoding/decoding before adding dependencies or creating a protocol. No such implementation exists yet.
 
 ## Boundaries to prove
 
@@ -65,9 +85,11 @@ Use explicit pairing and authenticated encrypted transport before carrying priva
 
 ### 4. Interaction and recovery
 
-Start with a clearly documented input method, such as the host keyboard/mouse. Then evaluate mapped headset-controller input. Hand tracking and custom eye tracking are not prerequisites for the first stereo/pose test.
+**Owner requirement:** controller-first physical interaction, translated so that the Simulator receives natural hand/finger interaction rather than ordinary gamepad control. This is a requirement to investigate, not an implemented or verified capability. Do not silently replace it with a mouse-only experience.
 
-The historical ALVR bridge documented keyboard/mouse interaction, not full controller/hand support. Provide disconnect, recenter and safe host-local recovery before calling a prototype usable.
+The owner accepted controller-point targeting with trigger-as-pinch, not head-direction targeting, and then delegated remaining design choices. Implement system-wide semantic pinch/select/drag first; add synthetic articulated hand data where compatible APIs/apps require it. Thumbstick scrolling, two-hand gestures and recovery mapping follow the capability-gated defaults in the product requirements. Controllers do not measure all finger joints; synthesized poses are not real tracking. Native focus feedback is preferred to a visible desktop mouse cursor or ornamental hand rendering. No custom eye-tracking hardware is a prerequisite.
+
+System-wide interaction must be proved separately from injecting hands into our own test app. The historical ALVR bridge documented keyboard/mouse interaction, not full controller/hand support; that limitation does not satisfy the new requirement. Host input may be useful as an explicit debugging fallback, not an assumed product substitute. Provide disconnect, recenter and safe host-local recovery before calling a prototype usable.
 
 ### 5. MacBook workspace integration
 
@@ -90,6 +112,6 @@ The [research report](research/report.md) preserves both routes. Its original in
 - No guaranteed App Store, Continuity, native Mac Virtual Display or arbitrary-headset support.
 - No claim that software restores missing panel resolution, eye cameras or stereo passthrough hardware.
 - No security downgrade on a shared Mac merely to reproduce an archived demo.
-- No framework/dependency or implementation language selected before a bounded compatibility investigation.
+- Preferred native technology choices are design defaults, not adopted dependencies or proof of current API compatibility. Do not add an engine, VM or software encoder without a measured reason.
 
 Licensing is an implementation gate, not a footnote. Read [licensing.md](licensing.md) before reusing any reference code.

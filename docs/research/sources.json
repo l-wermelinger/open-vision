@@ -588,5 +588,77 @@
     "use": "Report section 5.6: independent historical experience consistent with upstream architecture.",
     "limitation": "One old self-reported test on beta software, not a benchmark, current compatibility guarantee, proof of all Apple services, or evidence of daily-driver quality.",
     "snapshots": ["tmp/raw-pages/followup-hades.html"]
+  },
+  {
+    "id": "S43",
+    "title": "Docker Desktop for Mac FAQs",
+    "url": "https://docs.docker.com/desktop/troubleshoot-and-support/faqs/macfaqs/",
+    "checked_at": "2026-11-02",
+    "source_family": "Docker",
+    "topic": "container runtime boundary",
+    "note": "Describes the Linux VM used by Docker Desktop on macOS and Linux-container/image storage.",
+    "use": "Deployment decision: a normal Docker Linux container is not a macOS/Xcode runtime.",
+    "limitation": "Does not evaluate a separate macOS VM, custom remote host adapter or any actual Open Vision deployment. The unsupported full-Simulator-in-Linux-container conclusion also relies on the Apple platform requirements.",
+    "snapshots": ["tmp/raw-pages/planning-docker-mac.html"]
+  },
+  {
+    "id": "S44",
+    "title": "Apple container README",
+    "url": "https://github.com/apple/container",
+    "checked_at": "2026-11-02",
+    "source_family": "Apple container",
+    "topic": "Apple container is a Linux workload platform",
+    "note": "Explicitly describes running Linux containers as lightweight virtual machines on Apple-silicon Macs; the retrieved README targets macOS 26.",
+    "use": "Do not assume Apple's container tool supplies native macOS userspace or can host the visionOS Simulator inside an OCI image.",
+    "limitation": "No local container installation or performance test. A macOS host requirement does not make guest containers macOS containers.",
+    "snapshots": ["tmp/raw-pages/planning-apple-container.html"]
+  },
+  {
+    "id": "S45",
+    "title": "Apple Xcode SDK and system requirements",
+    "url": "https://developer.apple.com/xcode/system-requirements",
+    "checked_at": "2026-11-02",
+    "source_family": "Apple",
+    "topic": "native host version requirements",
+    "note": "Official Xcode/macOS/SDK/Simulator matrix; explicitly says visionOS development requires an Apple-silicon Mac.",
+    "use": "Require an exact tested macOS/Xcode/runtime tuple and a native Apple host; no Linux-container runtime promise.",
+    "limitation": "A supported SDK tuple does not establish private-hook compatibility, external headset streaming, account services or resource usage. Recheck the live table before choosing versions.",
+    "snapshots": ["tmp/raw-pages/planning-xcode-support.html"]
+  },
+  {
+    "id": "S46",
+    "title": "Apple: Using iCloud with macOS virtual machines",
+    "url": "https://developer.apple.com/documentation/virtualization/using-icloud-with-macos-virtual-machines",
+    "checked_at": "2026-11-02",
+    "source_family": "Apple",
+    "topic": "macOS VM account support is distinct from Simulator account support",
+    "note": "Documents iCloud support for appropriately created macOS 15+ VMs on compatible Apple-silicon hosts, VM identity derived using host Secure Enclave information, and reauthentication on host changes/cloning. Upgrading an older VM alone does not grant that support.",
+    "use": "Keep a macOS VM as a separately testable isolation alternative; do not falsely say all virtualized Apple Account access is impossible.",
+    "limitation": "This concerns the macOS guest account, not visionOS Simulator running in that guest. It proves neither nested graphics/Simulator performance nor the owner's actual account compatibility.",
+    "snapshots": ["tmp/raw-pages/planning-icloud-vm.html"]
+  },
+  {
+    "id": "S47",
+    "title": "Apple: Running macOS in a virtual machine on Apple silicon",
+    "url": "https://developer.apple.com/documentation/virtualization/running-macos-in-a-virtual-machine-on-apple-silicon",
+    "checked_at": "2026-11-02",
+    "source_family": "Apple",
+    "topic": "macOS VM alternative",
+    "note": "Documents native Virtualization-framework macOS guest setup and virtual-device configuration.",
+    "use": "Distinguish a full macOS VM from an ordinary Linux container and from native process isolation.",
+    "limitation": "Sample configuration is not proof that the required Metal/compositor/visionOS Simulator and account workload runs efficiently inside a VM. No such VM was created or tested.",
+    "snapshots": ["tmp/raw-pages/planning-vz-mac.html"]
+  },
+  {
+    "id": "S48",
+    "title": "Apple Xcode and Apple SDKs Agreement",
+    "url": "https://www.apple.com/legal/sla/docs/xcode.pdf",
+    "checked_at": "2026-11-02",
+    "source_family": "Apple",
+    "topic": "Simulator SDK and intended-use licensing gate",
+    "note": "Defines simulators within Apple SDKs. Section 2.2.A(iii)-(iv) restricts relevant SDK/services uses to testing/development for applicable Apple-branded products; section 2.7 includes non-Apple, network/server, copying and modification restrictions with stated legal/open-source qualifications.",
+    "use": "Require specific SDK/licence review before treating a simulator-to-headset experiment as an authorized end-user workspace or redistributable product.",
+    "limitation": "Published contractual language, not a jurisdiction-specific legal opinion or a conclusion about every remote-viewing/interop scenario. Do not infer permission merely from technical success or a device-OS licence.",
+    "snapshots": ["tmp/downloads/xcode-sdk-license.pdf", "tmp/extracts/xcode-sdk-license.txt"]
   }
 ]

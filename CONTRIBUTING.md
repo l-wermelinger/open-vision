@@ -6,7 +6,7 @@ Open Vision is investigating **Mac-hosted visionOS Simulator streaming**, not di
 
 ## Choose a bounded task
 
-Use an existing `OV-*` item or propose a clearly scoped change. Refer to its ID in the pull request. Keep unrelated changes separate; do not create a permanent architectural abstraction to solve a one-off experiment.
+Read the [product requirements](docs/product-requirements.md) and the phase gates in the workstream, then use an existing `OV-*` item or propose a clearly scoped change. Refer to its ID in the pull request. Keep unrelated changes separate; do not create a permanent architectural abstraction to solve a one-off experiment.
 
 The workstream is the single status ledger. Update it when evidence changes. An architecture proposal, successful compilation and successful hardware test are different outcomes.
 
@@ -17,7 +17,7 @@ The workstream is the single status ledger. Update it when evidence changes. An 
 - Implement explicitly assigned portable tooling or tests.
 - Prepare native changes with their build/test requirements clearly stated.
 
-Cloud agents without an authorized Mac/headset cannot validate Xcode Simulator rendering, PICO runtime behaviour, visual comfort or end-to-end latency. Mark those tests as not run and leave a reproducible procedure for a hardware operator.
+Cloud agents without an authorized Mac/headset/account operator cannot validate Xcode Simulator rendering, real Apple Account service compatibility, PICO runtime behaviour, visual comfort or end-to-end latency. Mark those tests as not run and leave a reproducible procedure for a hardware operator.
 
 ## Evidence for changes
 
