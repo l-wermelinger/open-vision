@@ -77,7 +77,7 @@ def check() -> None:
         if path.suffix != ".md":
             continue
         markdown_count += 1
-        assert SOURCE.findall(text) == [] or set(SOURCE.findall(text)) <= identifiers, name
+        assert set(SOURCE.findall(text)) <= identifiers, name
         for target in LINK.findall(text):
             error = link_error(path, target)
             assert error is None, f"{name}: {error}"

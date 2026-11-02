@@ -9,7 +9,7 @@
 
 You are continuing Open Vision: investigate streaming Apple's visionOS Simulator from an Apple-silicon Mac to existing VR hardware, initially the original consumer PICO 4. Preserve the authentic-Simulator goal; do not silently substitute a lookalike shell or flat remote desktop.
 
-**State.** The repository contains a feasibility report, a source ledger and documentation/tooling only. Research found a historical 2023 stereo/pose bridge for Quest, not a reproduced current PICO implementation. The owner selected the Mac-hosted Simulator direction and authorized repository creation/publication, not installation or modification of a personal host. Start with OV-3, which can be investigated from public sources without hardware access. OV-4 needs a separately authorized operator; OV-5 must not be declared working from static analysis.
+**State.** The public Open Vision repository contains a feasibility report, a source ledger and documentation/tooling only. The initial published commit and its fresh-checkout documentation CI passed; evidence is on OV-2. Research found a historical 2023 stereo/pose bridge for Quest, not a reproduced current PICO implementation. The owner selected the Mac-hosted Simulator direction and authorized repository creation/publication, not installation or modification of a personal host. Start with OV-3, which can be investigated from public sources without hardware access. OV-4 needs a separately authorized operator; OV-5 must not be declared working from static analysis.
 
 **Before you act.** Read `AGENTS.md`, `docs/architecture.md`, `docs/licensing.md` and section 5.6 of `docs/research/report.md`. Run `python3 scripts/check_docs.py`. Check every version and licence before adopting a historical command or component.
 
@@ -27,11 +27,11 @@ You are continuing Open Vision: investigate streaming Apple's visionOS Simulator
 
 The curated source ledger contains 42 entries checked on 2026-11-01. The report retains both the initial independent-workspace assessment and the later historical Simulator-streaming finding. These are documentary findings, not local hardware results.
 
-### OV-2: prepare the shared repository `[~]` publication and remote verification pending
+### OV-2: prepare the shared repository `[x]` DONE 2026-11-02 · evidence: published commit `c0d2dc98330b3a3cb3ab57fb6fa3204226868c31` and [successful fresh-checkout CI](https://github.com/l-wermelinger/open-vision/actions/runs/41494902057)
 
-Create a clean public `open-vision` repository with portable agent context, architecture, this ledger, contribution/licensing rules and documentation CI. Do not publish raw research archives, local harness state, personal paths or credentials.
+The public repository is [l-wermelinger/open-vision](https://github.com/l-wermelinger/open-vision), default branch `main`. Its initial remote commit and commit tree match the local publication. The documentation check passed for 11 Markdown files and 42 sources. The public file tree excludes raw archives, local harness state, personal home paths and detected credentials. Commits use a GitHub noreply address.
 
-**Done when:** a fresh checkout can read all project context and run the documentation check; the remote branch and CI result are verified. Record the repository URL, commit and check result here.
+Cloud agents can clone the repository and start with `AGENTS.md` and this document. This verifies repository/documentation availability, not application streaming or access to a Mac/headset.
 
 ### OV-3: establish a current compatibility and permission baseline `[ ]` first cloud-ready task
 
