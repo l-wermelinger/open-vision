@@ -1,0 +1,15 @@
+.DS_Store
+
+# Local research harness and third-party downloads are not public project files.
+/docs/research/state.json
+/docs/research/tmp/
+
+# Local credentials, hardware logs, captures and build output.
+.env
+.env.*
+!.env.example
+/.local/
+/build/
+/DerivedData/
+__pycache__/
+*.py[cod]

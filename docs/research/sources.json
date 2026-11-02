@@ -1,0 +1,592 @@
+[
+  {
+    "id": "S01",
+    "title": "PICO 4 specifications",
+    "url": "https://www.picoxr.com/global/products/pico4/specs",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO",
+    "topic": "hardware",
+    "note": "2160x2160 per eye; 20.6 PPD; XR2 Gen 1; 8 GB; 72/90 Hz; Wi-Fi 6 2.4/5 GHz.",
+    "use": "Report sections 3-4: original-device hardware ceiling.",
+    "limitation": "Manufacturer specification, not measured clarity. The OS 5.0 listing is launch-era, not current firmware.",
+    "snapshots": [
+      "tmp/raw-pages/pico4-specs.html"
+    ]
+  },
+  {
+    "id": "S02",
+    "title": "Use your Mac with Apple Vision Pro",
+    "url": "https://support.apple.com/en-us/118521",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "Mac Virtual Display",
+    "note": "One Mac at a time; main display only; Standard/Wide/Ultrawide; requirements and Connect workflow.",
+    "use": "Sections 2-3: define Apple baseline accurately.",
+    "limitation": "Apple product documentation; does not document a third-party receiver protocol. Published 2026-09-14.",
+    "snapshots": [
+      "tmp/raw-pages/apple-mvd.html"
+    ]
+  },
+  {
+    "id": "S03",
+    "title": "Apple Vision Pro technical specifications",
+    "url": "https://www.apple.com/apple-vision-pro/specs/",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "hardware",
+    "note": "Current M5 page lists 23 million pixels, micro-OLED, eye cameras, stereo main cameras and R1.",
+    "use": "Section 4: distinguish physical hardware from software aspirations.",
+    "limitation": "Current model, not necessarily original M2 model. Panel-pixel totals are not an exact effective-sharpness comparison.",
+    "snapshots": [
+      "tmp/raw-pages/apple-vision-specs.html"
+    ]
+  },
+  {
+    "id": "S04",
+    "title": "PICO Connect official download page",
+    "url": "https://www.picoxr.com/global/software/pico-link",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO",
+    "topic": "existing products",
+    "note": "Explicit macOS client and Mac desktop access; PICO OS 5.11.2 or later.",
+    "use": "Section 5.1: free/no-purchase baseline.",
+    "limitation": "Does not establish genuine extra Mac displays on original Pico 4. Rendered page chiefly exposes Windows release details.",
+    "snapshots": [
+      "tmp/raw-pages/pico-connect.html"
+    ]
+  },
+  {
+    "id": "S05",
+    "title": "Immersed FAQ",
+    "url": "https://immersed.com/faq",
+    "checked_at": "2026-11-01",
+    "source_family": "Immersed",
+    "topic": "existing products",
+    "note": "Lists Pico 4, Mac virtual displays, and restriction on multiple external monitors/display emulators.",
+    "use": "Section 5.2: primary ready-made workspace candidate.",
+    "limitation": "Contains dated/inconsistent support and subscription language. Not a verified 2026 price or headset performance measurement.",
+    "snapshots": [
+      "tmp/raw-pages/immersed-help.html"
+    ]
+  },
+  {
+    "id": "S06",
+    "title": "Immersed supported computers and headsets",
+    "url": "https://immersed.helpscoutdocs.com/article/7-supported-computers-headsets",
+    "checked_at": "2026-11-01",
+    "source_family": "Immersed",
+    "topic": "existing products",
+    "note": "Lists Pico 4, Apple silicon Macs with macOS 11.7+, and PC/Mac virtual displays.",
+    "use": "Section 5.2: more specific compatibility cross-check.",
+    "limitation": "Last updated 2024-06-05; same vendor family as FAQ, not independent corroboration.",
+    "snapshots": [
+      "tmp/raw-pages/immersed-supported.html"
+    ]
+  },
+  {
+    "id": "S07",
+    "title": "Immersed USB-C Mode on Pico 4 (BETA)",
+    "url": "https://immersed.helpscoutdocs.com/article/41-usb-c-mode-on-pico-4-beta",
+    "checked_at": "2026-11-01",
+    "source_family": "Immersed",
+    "topic": "USB transport",
+    "note": "Documents Pico 4 developer-mode USB setup and specific cable guidance.",
+    "use": "Sections 5.2 and 9: wired path exists but must be tested.",
+    "limitation": "Beta instructions, last updated 2025-06-02. Not proof of universal cable/macOS compatibility.",
+    "snapshots": [
+      "tmp/raw-pages/immersed-usb.html"
+    ]
+  },
+  {
+    "id": "S08",
+    "title": "Virtual Desktop official site and FAQ",
+    "url": "https://www.vrdesktop.net/",
+    "checked_at": "2026-11-01",
+    "source_family": "Virtual Desktop",
+    "topic": "existing products",
+    "note": "Lists Pico 4 and Mac desktop support; Windows requirement for PCVR gaming.",
+    "use": "Section 5.3: distinguish desktop support from Mac PCVR.",
+    "limitation": "Live page contains duplicated older sections and a macOS-version typo. Do not rely on exact price or typo as a requirement.",
+    "snapshots": [
+      "tmp/raw-pages/virtual-desktop.html"
+    ]
+  },
+  {
+    "id": "S09",
+    "title": "Virtual Desktop published releases",
+    "url": "https://github.com/guygodin/VirtualDesktop/releases",
+    "checked_at": "2026-11-01",
+    "source_family": "Virtual Desktop",
+    "topic": "release history",
+    "note": "API returned release notes for 1.32.5 multi-monitor limits, 1.34.0 Mac virtual-display creation, 1.34.16 21:9 modes and 1.34.22.",
+    "use": "Section 5.3: correct obsolete claims; qualified original-Pico screen count.",
+    "limitation": "Historical explicit two-monitor original-Pico limit was not measured on latest software. Some older GitHub release timestamps differ from contemporary press timing; no historical launch-date conclusion depends on that.",
+    "snapshots": [
+      "tmp/raw-pages/vd-releases.html"
+    ]
+  },
+  {
+    "id": "S10",
+    "title": "PippinVR README and licence",
+    "url": "https://github.com/triscuitcircuit/PippinVR",
+    "checked_at": "2026-11-01",
+    "source_family": "PippinVR",
+    "topic": "open-source prior art",
+    "note": "Native Mac virtual displays plus Quest APK/OpenXR client, USB/ADB path, known issues, GPLv3.",
+    "use": "Sections 5.4, 6 and 9: leading reuse candidate.",
+    "limitation": "README claims, not build/test results; documented headset targets are Quest. QuestLink and APK modes must be separated.",
+    "snapshots": [
+      "tmp/raw-pages/pippin.html",
+      "tmp/raw-pages/pippin-license.html"
+    ]
+  },
+  {
+    "id": "S11",
+    "title": "PippinVR repository health snapshot",
+    "url": "https://api.github.com/repos/triscuitcircuit/PippinVR",
+    "checked_at": "2026-11-01",
+    "source_family": "PippinVR",
+    "topic": "maintenance evidence",
+    "note": "Created 2026-09-24; last push 2026-10-31; 13 stars; one human contributor in returned list; main SHA 75ed33cce8235e1c05bb66c2942ad3653c1d4954.",
+    "use": "Section 5.4: maturity caveat and examined revision.",
+    "limitation": "Mutable API snapshot, not a quality score or full contributor/maintainer audit.",
+    "snapshots": [
+      "tmp/raw-pages/pippin-meta.html",
+      "tmp/raw-pages/pippin-contributors.html",
+      "tmp/raw-pages/pippin-commit.html"
+    ]
+  },
+  {
+    "id": "S12",
+    "title": "PippinVR releases",
+    "url": "https://github.com/triscuitcircuit/PippinVR/releases",
+    "checked_at": "2026-11-01",
+    "source_family": "PippinVR",
+    "topic": "release evidence",
+    "note": "v1.2.0 published 2026-10-31; preceding October releases.",
+    "use": "Section 5.4: active but very young project.",
+    "limitation": "Existence of releases does not establish successful builds or reliable operation on user hardware.",
+    "snapshots": [
+      "tmp/raw-pages/pippin-releases.html"
+    ]
+  },
+  {
+    "id": "S13",
+    "title": "PippinVR Android/OpenXR client source",
+    "url": "https://github.com/triscuitcircuit/PippinVR/blob/main/pippinVR-client/app/src/main/AndroidManifest.xml",
+    "checked_at": "2026-11-01",
+    "source_family": "PippinVR",
+    "topic": "Pico portability",
+    "note": "Oculus-specific manifest; Khronos Android loader; runtime extension negotiation including XR_FB_passthrough; native decoder linkage.",
+    "use": "Sections 5.4 and 6.2: plausible APK port, not existing Pico support.",
+    "limitation": "Sampled files only. No compile, device installation, controller validation or full security audit.",
+    "snapshots": [
+      "tmp/raw-pages/pippin-manifest.html",
+      "tmp/raw-pages/pippin-cmake.html",
+      "tmp/raw-pages/pippin-gradle.html",
+      "tmp/raw-pages/pippin-xrapp.html"
+    ]
+  },
+  {
+    "id": "S14",
+    "title": "PippinVR Mac display and capture source",
+    "url": "https://github.com/triscuitcircuit/PippinVR/blob/main/pippinVR-Server/Sources/pippinvr-server/VirtualDisplay.swift",
+    "checked_at": "2026-11-01",
+    "source_family": "PippinVR",
+    "topic": "macOS implementation",
+    "note": "CGVirtualDisplay classes resolved through Objective-C runtime; separate capture component.",
+    "use": "Section 6.1: explain private display-creation dependency.",
+    "limitation": "Does not prove supported macOS range, lifecycle correctness or unlimited display capacity.",
+    "snapshots": [
+      "tmp/raw-pages/pippin-virtualdisplay.html",
+      "tmp/raw-pages/pippin-screen.html"
+    ]
+  },
+  {
+    "id": "S15",
+    "title": "Apple ScreenCaptureKit documentation",
+    "url": "https://developer.apple.com/documentation/screencapturekit",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "public macOS capture",
+    "note": "Official DocC JSON describes high-performance capture, content selection and user screen-recording permission.",
+    "use": "Section 6.1: public capture building block.",
+    "limitation": "Capture API, not an API for creating virtual displays. SDK availability must be checked against deployment target.",
+    "snapshots": [
+      "tmp/raw-pages/apple-sck-json.html"
+    ]
+  },
+  {
+    "id": "S16",
+    "title": "Apple VideoToolbox documentation",
+    "url": "https://developer.apple.com/documentation/videotoolbox",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "hardware encoding",
+    "note": "Official documentation identifies hardware-accelerated video encoding and decoding capabilities.",
+    "use": "Section 6: use native encoding facilities.",
+    "limitation": "No measured concurrent encode count, codec quality or latency established for the user Mac.",
+    "snapshots": [
+      "tmp/raw-pages/apple-videotoolbox-json.html"
+    ]
+  },
+  {
+    "id": "S17",
+    "title": "DeskPad source and MIT licence",
+    "url": "https://github.com/Stengo/DeskPad",
+    "checked_at": "2026-11-01",
+    "source_family": "DeskPad",
+    "topic": "virtual-display prior art",
+    "note": "Virtual-monitor example; explicit CGVirtualDisplayPrivate.h; MIT licence.",
+    "use": "Sections 5.5 and 6.1: small reference and private-API warning.",
+    "limitation": "Not VR software or proof of future OS compatibility.",
+    "snapshots": [
+      "tmp/raw-pages/deskpad.html",
+      "tmp/raw-pages/deskpad-private.html",
+      "tmp/raw-pages/deskpad-license.html"
+    ]
+  },
+  {
+    "id": "S18",
+    "title": "Godot OpenXR Vendors plugin and licence",
+    "url": "https://github.com/GodotVR/godot_openxr_vendors",
+    "checked_at": "2026-11-01",
+    "source_family": "Godot OpenXR Vendors",
+    "topic": "headset implementation alternatives",
+    "note": "Open-source GDExtension for vendor OpenXR extensions and Android loaders; MIT licence.",
+    "use": "Section 6.2: potential fallback shell foundation.",
+    "limitation": "Not a turnkey high-quality multi-display streaming application; requires exact device/version verification.",
+    "snapshots": [
+      "tmp/raw-pages/godot-vendors.html",
+      "tmp/raw-pages/godot-license.html"
+    ]
+  },
+  {
+    "id": "S19",
+    "title": "Godot issue 292 and original discussion",
+    "url": "https://github.com/GodotVR/godot_openxr_vendors/issues/292",
+    "checked_at": "2026-11-01",
+    "source_family": "Godot OpenXR Vendors",
+    "topic": "counterevidence and pitfalls",
+    "note": "Historical original-Pico passthrough difficulty; Ultra testing; distinction between native APK and desktop streaming. Issue closed 2026-01-13.",
+    "use": "Sections 5.5 and 12: SKU/deployment caution, not a present unresolved bug claim.",
+    "limitation": "Self-reported issue, old versions and mixed testing paths; not a current firmware benchmark.",
+    "snapshots": [
+      "tmp/raw-pages/godot-292.html",
+      "tmp/raw-pages/godot-292-comments.html"
+    ]
+  },
+  {
+    "id": "S20",
+    "title": "Sunshine README and GPLv3 licence",
+    "url": "https://github.com/LizardByte/Sunshine",
+    "checked_at": "2026-11-01",
+    "source_family": "Sunshine",
+    "topic": "streaming alternatives",
+    "note": "Current matrix lists macOS ScreenCaptureKit and VideoToolbox support; GPLv3.",
+    "use": "Sections 5.5 and 6.3: reusable host/pairing/media stack candidate.",
+    "limitation": "Current requirements and platform features may differ by release. No turnkey independent multi-Mac-display workflow tested.",
+    "snapshots": [
+      "tmp/raw-pages/sunshine.html",
+      "tmp/raw-pages/sunshine-license.html"
+    ]
+  },
+  {
+    "id": "S21",
+    "title": "Nightfall README",
+    "url": "https://github.com/tB0nE/nightfall",
+    "checked_at": "2026-11-01",
+    "source_family": "Nightfall",
+    "topic": "streaming alternatives",
+    "note": "GPLv3 OpenXR/GameStream client, Quest/Linux targets, movable/curved surfaces; multi-monitor remains a roadmap item.",
+    "use": "Section 5.5: useful reference, not confirmed Pico multi-screen solution.",
+    "limitation": "Maintainer claims and roadmap; no Pico support or completion percentage independently validated.",
+    "snapshots": [
+      "tmp/raw-pages/nightfall.html"
+    ]
+  },
+  {
+    "id": "S22",
+    "title": "ALVR compatibility matrix",
+    "url": "https://github.com/alvr-org/ALVR",
+    "checked_at": "2026-11-01",
+    "source_family": "ALVR",
+    "topic": "PCVR alternatives",
+    "note": "Lists Pico support but marks macOS unsupported as a server.",
+    "use": "Section 5.5: exclude turnkey native-Mac recommendation.",
+    "limitation": "Current README, not an assertion that experimental forks can never support Mac.",
+    "snapshots": [
+      "tmp/raw-pages/alvr-readme.html"
+    ]
+  },
+  {
+    "id": "S23",
+    "title": "WiVRn README",
+    "url": "https://github.com/WiVRn/WiVRn",
+    "checked_at": "2026-11-01",
+    "source_family": "WiVRn",
+    "topic": "PCVR alternatives",
+    "note": "Linux-host PCVR streamer with Pico 4 support.",
+    "use": "Section 5.5: useful engineering reference, not native Mac companion.",
+    "limitation": "Documented host path is Linux; no Linux host hardware validation performed.",
+    "snapshots": [
+      "tmp/raw-pages/wivrn-readme.html"
+    ]
+  },
+  {
+    "id": "S24",
+    "title": "Monado developer site and hardware matrix",
+    "url": "https://monado.freedesktop.org/",
+    "checked_at": "2026-11-01",
+    "source_family": "Monado",
+    "topic": "runtime replacement limits",
+    "note": "Open XR runtime/driver framework, published native device matrix and platform caveats.",
+    "use": "Sections 3 and 5.5: runtime is not a complete Pico replacement firmware.",
+    "limitation": "Published matrix may omit experimental/out-of-tree work; absence is not proof of physical impossibility.",
+    "snapshots": [
+      "tmp/raw-pages/monado.html"
+    ]
+  },
+  {
+    "id": "S25",
+    "title": "PICO Unity OpenXR SDK README",
+    "url": "https://github.com/Pico-Developer/PICO-Unity-OpenXR-SDK",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO",
+    "topic": "official development tooling",
+    "note": "Vendor publishes OpenXR integration tooling.",
+    "use": "Section 6.2: supported development route exists.",
+    "limitation": "Unity tooling is not proof that every extension works on original Pico or that Unity is required.",
+    "snapshots": [
+      "tmp/raw-pages/pico-openxr.html"
+    ]
+  },
+  {
+    "id": "S26",
+    "title": "PICO Integration SDK camera image API",
+    "url": "https://github.com/Pico-Developer/PICO-Unity-Integration-SDK/blob/main/Runtime/Scripts/Features/PXR_CameraImage.cs",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO",
+    "topic": "camera access uncertainty",
+    "note": "Public class exposes camera sessions, intrinsics/extrinsics and image-related methods.",
+    "use": "Section 7: newer APIs exist; do not state camera access is universally absent.",
+    "limitation": "Inspected source does not establish original consumer Pico 4 hardware/firmware availability, permissions or unrestricted image access.",
+    "snapshots": [
+      "tmp/raw-pages/pico-camera-api.html",
+      "tmp/raw-pages/pico-sdk.html"
+    ]
+  },
+  {
+    "id": "S27",
+    "title": "Enterprise Camera Access Plugin for Vision Pro and Pico",
+    "url": "https://github.com/styly-dev/EnterpriseCameraAccessPlugin",
+    "checked_at": "2026-11-01",
+    "source_family": "STYLY",
+    "topic": "camera access constraints",
+    "note": "README explicitly requires Pico 4 Enterprise, testing-program authorization and authorized package name.",
+    "use": "Section 7: enterprise examples cannot be generalized to consumer Pico.",
+    "limitation": "Third-party integration instructions; newer APIs may have different requirements.",
+    "snapshots": [
+      "tmp/raw-pages/enterprise-camera.html"
+    ]
+  },
+  {
+    "id": "S28",
+    "title": "Apple visionOS 26 software licence",
+    "url": "https://www.apple.com/legal/sla/docs/visionOS26.pdf",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "legal boundaries",
+    "note": "Section 2(a) Apple-branded-device licence; 2(d) copying/reverse-engineering restrictions with legal/open-source exceptions.",
+    "use": "Section 8: proprietary code cannot be treated as open-source input.",
+    "limitation": "Published licence, not jurisdiction-specific legal advice or a finding about every statutory interoperability exception.",
+    "snapshots": [
+      "tmp/downloads/visionos26-license.pdf",
+      "tmp/extracts/visionos26-license.txt"
+    ]
+  },
+  {
+    "id": "S29",
+    "title": "Apple Developer Program License Agreement",
+    "url": "https://developer.apple.com/support/terms/apple-developer-program-license-agreement/",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "legal boundaries",
+    "note": "Restrictions on non-Apple use, copying/decompilation/derivatives and reserved intellectual-property rights, with exceptions.",
+    "use": "Section 8: cross-check licensing and entitlement boundaries.",
+    "limitation": "Developer agreement applicability depends on circumstances; no legal enforcement opinion.",
+    "snapshots": [
+      "tmp/raw-pages/apple-dev-agreement.html"
+    ]
+  },
+  {
+    "id": "S30",
+    "title": "Apple fonts page and included font licence terms",
+    "url": "https://developer.apple.com/fonts/",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "asset licensing",
+    "note": "SF font downloads and restrictive usage terms are not an unrestricted font-redistribution grant for non-Apple platforms.",
+    "use": "Section 8: use licensed alternative assets on Pico.",
+    "limitation": "Multiple font/download licences exist; inspect the precise asset licence before any use. No font package was downloaded or redistributed.",
+    "snapshots": [
+      "tmp/raw-pages/apple-font-license.html"
+    ]
+  },
+  {
+    "id": "S31",
+    "title": "UploadVR original Pico 4 hands-on review",
+    "url": "https://www.uploadvr.com/pico-4-review-quest-2-comparison/",
+    "checked_at": "2026-11-01",
+    "source_family": "UploadVR",
+    "topic": "hardware and lived experience",
+    "note": "Explains single central colour camera and synthesized stereo; discusses optics, comfort and tracking.",
+    "use": "Section 4: sensor geometry and historical experience, not current performance.",
+    "limitation": "Published 2022-10-18; launch firmware. The report explicitly does not carry old hand-tracking/performance claims forward as current facts.",
+    "snapshots": [
+      "tmp/raw-pages/uploadvr-pico-review.html"
+    ]
+  },
+  {
+    "id": "S32",
+    "title": "VR Expert Pico 4 Enterprise review",
+    "url": "https://vrx.vr-expert.com/pico-4-enterprise-review/",
+    "checked_at": "2026-11-01",
+    "source_family": "VR Expert",
+    "topic": "SKU distinction",
+    "note": "Enterprise eye/face tracking and physical variant differences.",
+    "use": "Section 4.3: avoid confusing original consumer device and Enterprise.",
+    "limitation": "Commercial reseller/practitioner source with commercial incentives; not direct testing of the user unit.",
+    "snapshots": [
+      "tmp/raw-pages/vrx-enterprise.html"
+    ]
+  },
+  {
+    "id": "S33",
+    "title": "PICO Spatial SDK samples",
+    "url": "https://github.com/Pico-Developer/PICO-Spatial-SDK-Samples",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO",
+    "topic": "new-platform compatibility",
+    "note": "Official samples explicitly target PICO OS 6; Kotlin/Compose spatial capabilities.",
+    "use": "Section 6.2: do not assume new spatial SDK runs on original Pico 4.",
+    "limitation": "Does not itself establish whether an original Pico will receive OS 6 or these APIs.",
+    "snapshots": [
+      "tmp/raw-pages/pico-spatial-sdk.html"
+    ]
+  },
+  {
+    "id": "S34",
+    "title": "UxPlay README",
+    "url": "https://github.com/FDH2/UxPlay",
+    "checked_at": "2026-11-01",
+    "source_family": "UxPlay",
+    "topic": "Apple protocol prior art",
+    "note": "Open implementation of AirPlay mirroring/audio on several host platforms.",
+    "use": "Sections 5.5 and 8: some interoperability is possible, but not equivalent to Mac Virtual Display.",
+    "limitation": "No Pico port tested; no automatic independent multi-display or Apple Continuity guarantee.",
+    "snapshots": [
+      "tmp/raw-pages/uxplay.html"
+    ]
+  },
+  {
+    "id": "S35",
+    "title": "Apple Open Source portal",
+    "url": "https://opensource.apple.com/",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "open-source component distinction",
+    "note": "Apple publishes selected projects/components rather than a full visionOS workspace implementation.",
+    "use": "Section 8: distinguish licensed open components from proprietary full OS.",
+    "limitation": "Portal inventory is not a proof about every Apple source release; individual licences still control reuse.",
+    "snapshots": [
+      "tmp/raw-pages/apple-opensource.html"
+    ]
+  },
+  {
+    "id": "S36",
+    "title": "Immersed listing on PICO Games",
+    "url": "https://www.picoxr.com/global/games/immersed",
+    "checked_at": "2026-11-01",
+    "source_family": "PICO / Immersed",
+    "topic": "SKU availability cross-check",
+    "note": "Advertises Mac/PC/Linux virtual screens and PICO availability.",
+    "use": "Section 5.2: cross-check Pico product distribution.",
+    "limitation": "Store marketing; regional/current installed availability and exact free entitlements not verified.",
+    "snapshots": [
+      "tmp/raw-pages/pico-immersed.html"
+    ]
+  },
+  {
+    "id": "S37",
+    "title": "Apple: interacting with your visionOS app in Device Hub",
+    "url": "https://developer.apple.com/documentation/xcode/interacting-with-your-visionos-app-in-device-hub",
+    "checked_at": "2026-11-01",
+    "source_family": "Apple",
+    "topic": "official visionOS simulation",
+    "note": "Current documentation covers simulated visionOS, Home View, Control Center, pointer-based gaze/gestures, viewpoint movement and simulated room scenes. The former Simulator URL redirects here.",
+    "use": "Report section 5.6: official Mac-hosted simulation exists, distinct from device firmware emulation.",
+    "limitation": "Does not establish an external headset streaming API, native Mac Virtual Display in Simulator, arbitrary App Store app availability or a full retail-device replacement.",
+    "snapshots": ["tmp/raw-pages/followup-devicehub-json.html"]
+  },
+  {
+    "id": "S38",
+    "title": "VisionOSStereoScreenshots ALVR branch README and tree",
+    "url": "https://github.com/zhuowei/VisionOSStereoScreenshots/tree/alvr",
+    "checked_at": "2026-11-01",
+    "source_family": "VisionOSStereoScreenshots",
+    "topic": "historical simulator streaming proof of concept",
+    "note": "README documents Apple-silicon Mac, Xcode 15 beta 2/macOS 14 beta 2, original Quest and ALVR nightly 2023-07-06; hooks compositor textures and streams them. No controller interaction in this path. Inspected branch tree contains no top-level licence file.",
+    "use": "Report section 5.6: materially strengthens the Mac Studio-hosted authentic-simulator route.",
+    "limitation": "Historical supported combination, not tested by us, not verified on original Pico or current SDKs. Public source is not by itself a redistribution licence.",
+    "snapshots": ["tmp/raw-pages/followup-stereo-readme.html", "tmp/raw-pages/followup-stereo-tree.html"]
+  },
+  {
+    "id": "S39",
+    "title": "VisionOSStereoScreenshots compositor hook and miniature ALVR server",
+    "url": "https://github.com/zhuowei/VisionOSStereoScreenshots/blob/alvr/visionos_stereo_screenshots.m",
+    "checked_at": "2026-11-01",
+    "source_family": "VisionOSStereoScreenshots",
+    "topic": "stereo rendering and incoming headset pose",
+    "note": "Source allocates per-eye textures, consumes incoming headset position/orientation, sets eye transforms and field of view, and encodes combined views. Server tracking callback records motion; button callback is empty. Private structure layouts and fixed 0.065 m eye offset illustrate fragility.",
+    "use": "Report section 5.6: distinguishes actual stereo/pose bridge from a flat desktop-video demonstration.",
+    "limitation": "Read-only sampled source inspection, not compilation or runtime validation. Examined branch head 0be47e12a8a330d9dd48f2763d4329a29a6027e4. Does not establish acceptable timing, safety or current private ABI compatibility.",
+    "snapshots": ["tmp/raw-pages/followup-stereo-source.html", "tmp/raw-pages/followup-stereo-server.html", "tmp/raw-pages/followup-stereo-inject.html", "tmp/raw-pages/followup-stereo-modules.html"]
+  },
+  {
+    "id": "S40",
+    "title": "VisionOSStereoScreenshots history, metadata and original issues",
+    "url": "https://github.com/zhuowei/VisionOSStereoScreenshots/issues",
+    "checked_at": "2026-11-01",
+    "source_family": "VisionOSStereoScreenshots",
+    "topic": "maintenance, compatibility and licence uncertainty",
+    "note": "ALVR branch commits returned are from July 2023. Issues mention changed private APIs, injection denials and a December 2025 user report of failure on macOS/visionOS 26.2. GitHub detects no repository licence.",
+    "use": "Report section 5.6: reject turnkey-current compatibility and unrestricted code-reuse claims.",
+    "limitation": "Issue reports are self-reported cases, not proof a modern port cannot work. Repository-wide last push differs from ALVR-branch activity. No detected licence is not a full legal analysis of every component.",
+    "snapshots": ["tmp/raw-pages/followup-stereo-meta.html", "tmp/raw-pages/followup-stereo-commits.html", "tmp/raw-pages/followup-stereo-issues.html"]
+  },
+  {
+    "id": "S41",
+    "title": "XRGyroControls_OpenXR README",
+    "url": "https://github.com/shinyquagsire23/XRGyroControls_OpenXR",
+    "checked_at": "2026-11-01",
+    "source_family": "XRGyroControls_OpenXR",
+    "topic": "historical alternative bridge and security implications",
+    "note": "Documents a Quest Link/Monado visionOS Simulator bridge, beta-specific dependencies, private injection, disabling SIP and library validation, and known interaction/rendering issues.",
+    "use": "Report section 5.6: related prior art and explicit warning against unapproved host security changes.",
+    "limitation": "These instructions belong to this particular tool; do not imply every simulator bridge requires the same security downgrade. No commands executed and no current compatibility verified.",
+    "snapshots": ["tmp/raw-pages/followup-gyro-readme.html"]
+  },
+  {
+    "id": "S42",
+    "title": "This Project Lets You Stream visionOS to the Meta Quest",
+    "url": "https://hadestech.substack.com/p/this-project-lets-you-stream-visionos",
+    "checked_at": "2026-11-01",
+    "source_family": "HadesButNews firsthand test",
+    "topic": "historical independent user experience",
+    "note": "2023-07-10 author reports using the ALVR bridge on an M2 MacBook Air and Quest 2; describes working UI with low resolution/lag, simulator backgrounds and keyboard/mouse interaction rather than controller/hand/eye input.",
+    "use": "Report section 5.6: independent historical experience consistent with upstream architecture.",
+    "limitation": "One old self-reported test on beta software, not a benchmark, current compatibility guarantee, proof of all Apple services, or evidence of daily-driver quality.",
+    "snapshots": ["tmp/raw-pages/followup-hades.html"]
+  }
+]
